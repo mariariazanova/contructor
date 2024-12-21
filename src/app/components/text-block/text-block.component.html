@@ -1,0 +1,19 @@
+<div class="text-block" [ngStyle]="textBlockStyles">
+<!--    textBlockStyles-->
+<!--  }">-->
+<!--<div class="text-block" [ngStyle]="{ textBlockStyles }">-->
+  <h2 *ngIf="content.heading" [ngStyle]="headerStyles">{{ content.heading }}</h2>
+
+<!--  <ng-template ngFor let-item [ngForOf]="content.bodyText.content" let-i="index" [ngForTrackBy]="trackByFn">-->
+<!--    <p>{{ item['content'][0].value }}</p>-->
+<!--  </ng-template>-->
+
+  <ng-template ngFor let-item [ngForOf]="content.bodyText.content" let-index="index">
+    <ng-template ngFor let-i [ngForOf]="item['content']" let-index="index" [ngForTrackBy]="trackByFn">
+      <p [ngStyle]="textStyles">{{ i.value }}</p>
+    </ng-template>
+  </ng-template>
+
+  <app-cta-button [content]="buttonContent"></app-cta-button>
+<!--  <div [innerHTML]="content.bodyText"></div>-->
+</div>

@@ -1,0 +1,13 @@
+.cta-button {
+  position: absolute;
+  //background: #0078d7;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background: #005a9e;
+  }
+}
