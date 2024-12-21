@@ -17,10 +17,10 @@ import { TextBlockComponent } from '../text-block/text-block.component';
 //     ImageSectionComponent,
 //     TextBlockComponent,
 //   ],
-//   templateUrl: './page.component.html',
-//   styleUrl: './page.component.scss',
+//   templateUrl: './complicated-page.component.html',
+//   styleUrl: './complicated-page.component.scss',
 // })
-// export class PageComponent implements OnInit {
+// export class ComplicatedPageComponent implements OnInit {
 //   ctaButtonContent: any;
 //   mainContent: any;
 //   isLoading = true;

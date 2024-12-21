@@ -21,6 +21,7 @@ export class TextBlockComponent implements OnInit {
   ngOnInit(): void {
     // this.gradientConfig = this.textBlockContent.backgroundGradientConfig;
     console.log(this.content);
+    console.log(this.buttonContent);
 
     const {
       color1 = '#ff7e5f',
@@ -45,14 +46,19 @@ export class TextBlockComponent implements OnInit {
       gap: this.content.textBlockGap,
       color: this.content.textColor,
       'text-align': this.content.textAlign,
+      'align-self': this.content.textPosition,
     };
 
     this.headerStyles = {
       width: this.content.headerWidth,
+      'text-align': this.content.textAlign,
+      'align-self': this.content.textPosition,
     };
 
     this.textStyles = {
       width: this.content.textWidth,
+      'text-align': this.content.textAlign,
+      'align-self': this.content.textPosition,
     };
 
     // console.log(this.textBlockStyles);

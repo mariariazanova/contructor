@@ -1,4 +1,4 @@
-import {Component, Directive, OnInit} from '@angular/core';
+import { Component, Directive, OnInit } from '@angular/core';
 import { JsonPipe, NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import { ContentfulService } from '../../services/contentful.service';
 import { ImageSectionComponent } from '../../components/image-section/image-section.component';
@@ -16,8 +16,8 @@ import { TextBlockComponent } from '../../components/text-block/text-block.compo
 //     ImageSectionComponent,
 //     TextBlockComponent,
 //   ],
-//   // templateUrl: './page.component.html',
-//   // styleUrl: './page.component.scss',
+//   // templateUrl: './complicated-page.component.html',
+//   // styleUrl: './complicated-page.component.scss',
 // })
 @Directive({
   // standalone: true,
@@ -42,14 +42,15 @@ export abstract class PageComponent implements OnInit {
       this.mainContent = data[0].fields;
       console.log(this.mainContent);
       const buttonRef =
-        this.mainContent.textBlockWithButton[0].fields.button.sys.id;
+        this.mainContent.textBlockWithButton?.[0].fields.button.sys.id;
 
-      // Fetch the referenced Button entry
-      this.contentfulService.getEntry(buttonRef).then((data) => {
-        this.ctaButtonContent = data;
-        console.log(this.ctaButtonContent);
-        this.isLoading = false;
-      });
+      buttonRef
+        ? this.contentfulService.getEntry(buttonRef).then((data) => {
+            this.ctaButtonContent = data;
+            console.log(this.ctaButtonContent);
+            this.isLoading = false;
+          })
+        : (this.isLoading = false);
     });
   }
 }
