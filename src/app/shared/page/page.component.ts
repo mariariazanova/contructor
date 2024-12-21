@@ -37,6 +37,7 @@ export abstract class PageComponent implements OnInit {
 
   private loadPageContent(): void {
     // return new Observable((observer) => {
+    console.log(this.pageName);
     this.contentfulService.getPageContent(this.pageName).then((data) => {
       this.mainContent = data[0].fields;
       console.log(this.mainContent);

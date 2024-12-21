@@ -22,7 +22,7 @@ import { PageComponent } from '../../shared/page/page.component';
   styleUrl: '../../shared/page/page.component.scss',
 })
 export class MoreInfoPageComponent extends PageComponent {
-  protected pageName = 'Detail Page';
+  protected pageName = 'More Info Page';
   // ctaButtonContent: any;
   // mainContent: any;
   // isLoading = true;
