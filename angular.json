@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/constructor",
+            "outputPath": "dist/constructor/browser",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -34,12 +34,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -67,12 +62,15 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "constructor:build"
+          },
           "configurations": {
             "production": {
-              "buildTarget": "constructor:build:production"
+              "browserTarget": "constructor:build:production"
             },
             "development": {
-              "buildTarget": "constructor:build:development"
+              "browserTarget": "constructor:build:development"
             }
           },
           "defaultConfiguration": "development"
