@@ -51,8 +51,10 @@ export abstract class ComplicatedPageComponent implements OnInit {
       this.pageNames.map((pageName) => {
         return this.contentfulService.getPageContent(pageName).then((data) => {
           const pageContent = data[0].fields;
+          console.log(pageName, pageContent);
           const buttonRef =
             pageContent.textBlockWithButton?.[0].fields.button.sys.id;
+          console.log(buttonRef);
 
           if (buttonRef) {
             return this.contentfulService
@@ -68,7 +70,7 @@ export abstract class ComplicatedPageComponent implements OnInit {
             return {
               pageName,
               mainContent: pageContent,
-              buttonData: {},
+              // buttonData: {},
             };
           }
         });

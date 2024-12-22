@@ -8,11 +8,19 @@
 <!--    <p>{{ item['content'][0].value }}</p>-->
 <!--  </ng-template>-->
 
-  <ng-template ngFor let-item [ngForOf]="content.bodyText.content" let-index="index">
-    <ng-template ngFor let-i [ngForOf]="item['content']" let-index="index" [ngForTrackBy]="trackByFn">
-      <p [ngStyle]="textStyles">{{ i.value }}</p>
+<!--  <div *ngFor="let item of content.bodyText.content; let index">-->
+<!--    <ng-template ngFor let-i [ngForOf]="item['content']" let-index="index" [ngForTrackBy]="trackByFn">-->
+<!--      <p [ngStyle]="textStyles">{{ i.value }}</p>-->
+<!--    </ng-template>-->
+<!--  </div>-->
+
+  <div>
+    <ng-template ngFor let-item [ngForOf]="content.bodyText.content" let-index="index">
+      <ng-template ngFor let-i [ngForOf]="item['content']" let-index="index" [ngForTrackBy]="trackByFn">
+        <p [ngStyle]="textStyles" style="white-space: pre-wrap;">{{ i.value }}</p>
+      </ng-template>
     </ng-template>
-  </ng-template>
+  </div>
 
   <app-cta-button *ngIf="buttonContent" [content]="buttonContent"></app-cta-button>
 <!--  <div [innerHTML]="content.bodyText"></div>-->

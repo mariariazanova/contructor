@@ -1,7 +1,9 @@
 <div *ngIf="!isLoading; else loading">
-  <app-text-block [content]="mainContent.textBlockWithButton?.[0].fields || mainContent.textBlock.fields" [buttonContent]="ctaButtonContent"></app-text-block>
+  <div class="content-container">
+    <app-text-block [content]="mainContent.textBlockWithButton?.[0].fields || mainContent.textBlock.fields" [buttonContent]="ctaButtonContent"></app-text-block>
 
-  <app-image-section [content]="mainContent.imageSection"></app-image-section>
+    <app-image-section [content]="mainContent.imageSection"></app-image-section>
+  </div>
 </div>
 
 <ng-template #loading>

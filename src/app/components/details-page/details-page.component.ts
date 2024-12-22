@@ -28,7 +28,7 @@ import { ComplicatedPageComponent } from '../../shared/complicated-page/complica
 export class DetailsPageComponent extends ComplicatedPageComponent {
   // PageComponent {
   // protected pageName = 'Details Page';
-  protected pageNames = ['Details Page', 'Variety Page'];
+  protected pageNames = ['Details Page', 'Variety Page', 'Materials Page'];
 
   constructor(protected override contentfulService: ContentfulService) {
     super(contentfulService);

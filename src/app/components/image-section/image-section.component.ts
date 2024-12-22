@@ -20,13 +20,14 @@ export class ImageSectionComponent implements OnInit {
   imageStyles: ImageStyle[] = [];
 
   ngOnInit(): void {
+    console.log(this.content);
     this.content.forEach((image: any) => {
       const { imagePosition, imageWidth, isImageFront } = image.fields;
 
       this.imageStyles.push({
         width: imageWidth,
-        top: imagePosition.top,
-        left: imagePosition.left,
+        top: imagePosition?.top || '0px',
+        left: imagePosition?.left || '0px',
         ...(isImageFront && { 'z-index': 1 }),
       });
     });
