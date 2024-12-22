@@ -8,9 +8,8 @@ describe('CtaButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ButtonSectionComponent]
-    })
-    .compileComponents();
+      imports: [ButtonSectionComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ButtonSectionComponent);
     component = fixture.componentInstance;
