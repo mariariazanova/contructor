@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { JsonPipe, NgForOf, NgIf, NgStyle } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 interface ImageStyle {
   width: string;
@@ -10,7 +10,7 @@ interface ImageStyle {
 @Component({
   selector: 'app-image-section',
   standalone: true,
-  imports: [NgIf, NgForOf, NgStyle],
+  imports: [CommonModule],
   templateUrl: './image-section.component.html',
   styleUrl: './image-section.component.scss',
 })
@@ -20,7 +20,6 @@ export class ImageSectionComponent implements OnInit {
   imageStyles: ImageStyle[] = [];
 
   ngOnInit(): void {
-    console.log(this.content);
     this.content.forEach((image: any) => {
       const { imagePosition, imageWidth, isImageFront } = image.fields;
 
@@ -31,8 +30,7 @@ export class ImageSectionComponent implements OnInit {
         ...(isImageFront && { 'z-index': 1 }),
       });
     });
-    console.log(this.imageStyles);
   }
 
-  trackByFn = (idx: number, item: any): number => idx;
+  trackByFn = (idx: number): number => idx;
 }

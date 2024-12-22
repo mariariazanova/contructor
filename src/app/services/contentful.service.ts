@@ -12,12 +12,6 @@ export class ContentfulService {
 
   constructor() {}
 
-  getEntries(contentType: string): Promise<Entry<any>[]> {
-    return this.client
-      .getEntries({ content_type: contentType })
-      .then((response) => response.items);
-  }
-
   getEntry(entryId: string): Promise<Entry<any>> {
     return this.client.getEntry(entryId);
   }

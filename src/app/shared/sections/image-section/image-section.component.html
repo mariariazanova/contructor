@@ -1,0 +1,9 @@
+<div class="image-section">
+  <ng-template ngFor let-item [ngForOf]="content" let-index="index" [ngForTrackBy]="trackByFn">
+    <img
+      [src]="item.fields.image.fields.file.url"
+      [ngStyle]="imageStyles[index]"
+      [alt]="item.fields.altText"
+    />
+  </ng-template>
+</div>

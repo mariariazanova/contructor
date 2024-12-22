@@ -1,15 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { JsonPipe, NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
-import { CtaButtonComponent } from '../cta-button/cta-button.component';
+import { CommonModule } from '@angular/common';
+import { ButtonSectionComponent } from '../button-section/button-section.component';
 
 @Component({
-  selector: 'app-text-block',
+  selector: 'app-text-section',
   standalone: true,
-  imports: [NgClass, NgIf, NgForOf, JsonPipe, NgStyle, CtaButtonComponent],
-  templateUrl: './text-block.component.html',
-  styleUrl: './text-block.component.scss',
+  imports: [CommonModule, ButtonSectionComponent],
+  templateUrl: './text-section.component.html',
+  styleUrl: './text-section.component.scss',
 })
-export class TextBlockComponent implements OnInit {
+export class TextSectionComponent implements OnInit {
   @Input() content: any;
   @Input() buttonContent?: any;
 
@@ -19,10 +19,6 @@ export class TextBlockComponent implements OnInit {
   gradientStyle = '';
 
   ngOnInit(): void {
-    // this.gradientConfig = this.textBlockContent.backgroundGradientConfig;
-    console.log(this.content);
-    console.log(this.buttonContent);
-
     const {
       color1 = '#ff7e5f',
       color2 = '#feb47b',
@@ -30,11 +26,6 @@ export class TextBlockComponent implements OnInit {
       color1Stop = '50%',
       color2Stop = '100%',
     } = this.content.backgroundGradient;
-    // const {
-    //
-    // } = this.content.
-    console.log(this.content);
-    console.log(this.buttonContent);
 
     this.gradientStyle = `linear-gradient(${angle}deg, ${color1} ${color1Stop}, ${color2} ${color2Stop})`;
     this.textBlockStyles = {
@@ -60,14 +51,7 @@ export class TextBlockComponent implements OnInit {
       'text-align': this.content.textAlign,
       'align-self': this.content.textPosition,
     };
-
-    // console.log(this.textBlockStyles);
-    // Set the gradient style using both color and angle
-    // if (this.gradientConfig) {
-    //   const { color1, color2, angle } = this.gradientConfig;
-    //   this.gradientStyle = `linear-gradient(${angle}deg, ${color1}, ${color2})`;
-    // }
   }
 
-  trackByFn = (idx: number, item: any): number => idx;
+  trackByFn = (idx: number): number => idx;
 }

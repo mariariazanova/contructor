@@ -1,6 +1,6 @@
 <div *ngIf="!isLoading; else loading">
   <div @showOn *ngFor="let section of pageData" class="content-container">
-    <app-text-block [content]="section.mainContent.textBlockWithButton?.[0].fields || section.mainContent.textBlock.fields" [buttonContent]="section.buttonData"></app-text-block>
+    <app-text-section [content]="section.mainContent.textBlockWithButton?.[0].fields || section.mainContent.textBlock.fields" [buttonContent]="section.buttonData"></app-text-section>
 
     <app-image-section [content]="section.mainContent.imageSection"></app-image-section>
   </div>
