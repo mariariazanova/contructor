@@ -1,5 +1,5 @@
 <div *ngIf="!isLoading; else loading">
-  <div class="content-container">
+  <div @appear class="content-container">
     <app-text-block [content]="mainContent.textBlockWithButton?.[0].fields || mainContent.textBlock.fields" [buttonContent]="ctaButtonContent"></app-text-block>
 
     <app-image-section [content]="mainContent.imageSection"></app-image-section>

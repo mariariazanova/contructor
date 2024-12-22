@@ -1,25 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { JsonPipe, NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
+import {
+  CommonModule,
+  JsonPipe,
+  NgClass,
+  NgForOf,
+  NgIf,
+  NgStyle,
+} from '@angular/common';
 import { CtaButtonComponent } from '../cta-button/cta-button.component';
 import { ContentfulService } from '../../services/contentful.service';
 import { ImageSectionComponent } from '../image-section/image-section.component';
 import { TextBlockComponent } from '../text-block/text-block.component';
 import { PageComponent } from '../../shared/page/page.component';
+import { appear } from '../../animations/appear-disappear';
 
 @Component({
   selector: 'app-more-info-page',
   standalone: true,
   imports: [
     // NgClass,
-    NgIf,
+    // NgIf,
     // NgForOf,
     // JsonPipe,
     // NgStyle,
     ImageSectionComponent,
     TextBlockComponent,
+    CommonModule,
   ],
   templateUrl: '../../shared/page/page.component.html',
   styleUrl: '../../shared/page/page.component.scss',
+  animations: [appear],
 })
 export class ContactsPageComponent extends PageComponent {
   protected pageName = 'Contacts Page';

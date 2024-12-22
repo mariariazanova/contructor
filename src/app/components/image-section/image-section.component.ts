@@ -10,7 +10,7 @@ interface ImageStyle {
 @Component({
   selector: 'app-image-section',
   standalone: true,
-  imports: [NgIf, NgForOf, JsonPipe, NgStyle],
+  imports: [NgIf, NgForOf, NgStyle],
   templateUrl: './image-section.component.html',
   styleUrl: './image-section.component.scss',
 })

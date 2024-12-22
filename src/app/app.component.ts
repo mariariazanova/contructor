@@ -5,17 +5,18 @@ import { TextBlockComponent } from './components/text-block/text-block.component
 import { ImageSectionComponent } from './components/image-section/image-section.component';
 import { CtaButtonComponent } from './components/cta-button/cta-button.component';
 import { Observable } from 'rxjs';
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    TextBlockComponent,
-    ImageSectionComponent,
-    CtaButtonComponent,
-    NgIf,
+    // TextBlockComponent,
+    // ImageSectionComponent,
+    // CtaButtonComponent,
+    // NgIf,
+    // CommonModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

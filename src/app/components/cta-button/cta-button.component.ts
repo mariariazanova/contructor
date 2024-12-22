@@ -18,12 +18,13 @@ export class CtaButtonComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.content);
-    const { buttonPosition, backgroundColor } = this.content.fields;
+    const { buttonPosition, backgroundColor, margin } = this.content.fields;
 
     this.buttonStyles = {
       // top: buttonPosition.top,
       // left: buttonPosition.left,
       'background-color': backgroundColor,
+      margin,
     };
   }
 
@@ -35,9 +36,9 @@ export class CtaButtonComponent implements OnInit {
     } else if (actionType === 'Popup') {
       console.log('Trigger popup:', target);
       // Implement popup logic here
-    } else if (actionType === 'Custom') {
+    } else if (actionType === 'custom') {
       console.log('Custom action triggered:', target);
-      // Trigger custom event logic
+      alert('Thank you for your attention!');
     }
   }
 }
